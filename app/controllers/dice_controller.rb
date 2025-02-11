@@ -16,6 +16,12 @@ class DiceController < ApplicationController
     end
 
     def five_four
+      @dice_rolls = Array.new
+
+      5.times do
+        @dice_rolls.push(rand(1..4))
+      end
+
       render({ :template => "dice_templates/5d4" })
     end
 end
